@@ -1,1 +1,29 @@
-<h1>Ruta senderista</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rutas</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+
+    <!-- leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+    integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
+    crossorigin=""/>
+
+  </head>
+  <body>
+
+    <!-- <h1>RUTA</h1> -->
+    <h3 id="n_ruta"> <%= info[0].nombre_ruta  %> </h3>
+    <p id="n_parque"> <%= info[0].parque_natural  %> </p>
+    <p id="nombre_archivo" style="display: none"> <%= info[0].gpx_file  %> </p>
+
+
+    <div id='map' style="height: 75vh; width: 140vh; border: 1px solid;"></div>
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+    <script src="/javascripts/script_ruta.js"></script>
+
+  </body>
+</html>

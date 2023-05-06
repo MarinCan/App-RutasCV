@@ -1,1 +1,28 @@
-<h1>Lista y filtro rutas</h1>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Rutas</title>
+    <link rel='stylesheet' href='/stylesheets/lista.css' />
+  </head>
+  <body>
+    <h1>Rutas</h1>
+
+    <div>
+
+      <% for (let i=0; i<rutas.length; i++){  %>
+
+        <div style="border: 1px solid; margin: 1rem; padding: 1rem;">
+
+          <h3> <%= rutas[i].nombre_ruta %> </h3>
+          <p> <%= rutas[i].parque_natural %> </p>
+
+          <a href="/ruta/<%= rutas[i].id %>">Ir a la ruta</a>
+
+        </div>
+
+      <% } %>
+
+    </div>
+
+  </body>
+</html>

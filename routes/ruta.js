@@ -1,9 +1,15 @@
 var express = require('express');
 var router = express.Router();
+const pool = require('../database')
 
 /* GET users listing. */
-router.get('/', function(req, res, next) {
-    res.render('ruta');
-});
+router.get('/:id', async function(req, res, next) {
+  
+    const id_ruta = req.params.id
+    // console.log(req.params.id)
+    const [info] = await pool.query('SELECT * FROM rutas WHERE id = ?', id_ruta)
+  
+    res.render('ruta', { info });
+  });
 
 module.exports = router;

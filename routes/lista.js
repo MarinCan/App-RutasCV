@@ -5,9 +5,9 @@ const pool = require('../database')
 
 /* GET users listing. */
 router.get('/', async function(req, res, next) {
-    const [resultado] = await pool.query('SELECT 1+1')
-    console.log(resultado)
-    res.render('lista');
+    const [rutas] = await pool.query('SELECT * FROM rutas')
+    // console.log(rutas)
+    res.render('lista', { rutas });
 });
 
 module.exports = router;
