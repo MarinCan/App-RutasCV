@@ -10,7 +10,7 @@ const nom_arch = document.getElementById("nombre_archivo").innerHTML.trimStart()
 // console.log(nom_ruta.trimStart())
 // console.log('/rutas_gpx/'+nom_arch)
 
-var map = L.map('map');
+const map = L.map('map');
 
 // CARTOGR. VECTORIAL:
 // L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
@@ -23,7 +23,7 @@ L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
 }).addTo(map);
 
-var gpx = '/rutas_gpx/' + nom_arch; // URL to your GPX file or the GPX itself
+const gpx = '/rutas_gpx/' + nom_arch; // URL to your GPX file or the GPX itself
 new L.GPX(gpx, {
   async: true,
   marker_options: {

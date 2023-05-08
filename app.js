@@ -1,18 +1,21 @@
-var createError = require('http-errors');
-var express = require('express');
-var path = require('path');
-var cookieParser = require('cookie-parser');
-var logger = require('morgan');
+const createError = require('http-errors');
+const express = require('express');
+const path = require('path');
+const cookieParser = require('cookie-parser');
+const logger = require('morgan');
+const passport = require('passport')
 
-var indexRouter = require('./routes/index');
-var loginRouter = require('./routes/login');
-var registerRouter = require('./routes/register');
-var userRouter = require('./routes/user');
-var mapaRouter = require('./routes/mapa_gv');
-var listaRouter = require('./routes/lista');
-var rutaRouter = require('./routes/ruta');
 
-var app = express();
+
+const indexRouter = require('./routes/index');
+const loginRouter = require('./routes/login');
+const registerRouter = require('./routes/register');
+const userRouter = require('./routes/user');
+const mapaRouter = require('./routes/mapa_gv');
+const listaRouter = require('./routes/lista');
+const rutaRouter = require('./routes/ruta');
+
+const app = express();
 
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
