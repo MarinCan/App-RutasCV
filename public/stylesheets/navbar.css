@@ -1,0 +1,94 @@
+*{
+    text-decoration: none;
+    list-style: none;
+}
+    
+nav{
+    background-color: #333333;
+    height: 82px;
+    width: 100%;
+}
+
+.caja-logo{
+    position: absolute;
+    padding: 20px 50px;
+    margin-top: 8px;
+}
+
+#img-icono{
+    height: 30px;
+    padding-right: 10px;
+}
+
+.logo{
+    height: 40px;
+    color: white;
+    font-size: 25px;
+    display: flex;
+    align-items: center;
+}
+
+ul{
+    float: right;
+    margin-right: 30px;
+}
+
+li{
+    display: inline-block;
+    line-height: 80px;
+    margin: 0 5px;
+    font-size: 18px;
+    padding-left: 1rem;
+
+}
+
+
+.checkbtn{
+    font-size: 30px;
+    color: white;
+    float: right;
+    line-height: 80px;
+    margin-right: 40px;
+    cursor: pointer;
+    display: none;
+}
+
+#check{
+    display: none;
+}  
+
+
+@media only screen and (max-width: 768px){
+    .checkbtn{
+        display: block;
+    }
+        
+    
+    ul{
+        position: fixed;
+        width: 100%;
+        height: 50vh;
+        background: #333333;
+        /* background: red; */
+        top: 80px;
+        right: -120%;
+        text-align: center;
+        transition: .5s;
+    }
+    
+    li{
+        display: block;
+        margin: 10px 0;
+        line-height: 90px;
+    }
+    
+    /* a{
+        font-size: 20px;
+    } */
+
+    #check:checked~ul{
+        left: 0;
+        opacity: .8;
+    }
+
+}

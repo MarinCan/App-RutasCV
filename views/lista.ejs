@@ -3,8 +3,17 @@
   <head>
     <title>Rutas</title>
     <link rel='stylesheet' href='/stylesheets/lista.css' />
+        <!-- CSS files -->
+        <link rel='stylesheet' href='/stylesheets/style.css' />
+        <link rel="stylesheet" href='/stylesheets/footer.css'>
+        <link rel="stylesheet" href='/stylesheets/navbar.css'>
+        <!-- Font awesome -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   </head>
   <body>
+
+    <%- include('partials/navbar.ejs') %>
+
     <h1>Rutas</h1>
 
     <div>
@@ -23,6 +32,8 @@
       <% } %>
 
     </div>
+
+    <%- include('partials/footer.ejs') %>
 
   </body>
 </html>
