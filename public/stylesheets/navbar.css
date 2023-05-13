@@ -4,7 +4,7 @@
 }
     
 nav{
-    background-color: #333333;
+    background-color: #070707;
     height: 82px;
     width: 100%;
 }
@@ -28,12 +28,12 @@ nav{
     align-items: center;
 }
 
-ul{
+#ul-nav{
     float: right;
     margin-right: 30px;
 }
 
-li{
+.li_nav{
     display: inline-block;
     line-height: 80px;
     margin: 0 5px;
@@ -64,7 +64,7 @@ li{
     }
         
     
-    ul{
+    #ul-nav{
         position: fixed;
         width: 100%;
         height: 50vh;
@@ -76,7 +76,7 @@ li{
         transition: .5s;
     }
     
-    li{
+    .li_nav{
         display: block;
         margin: 10px 0;
         line-height: 90px;

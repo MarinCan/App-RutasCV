@@ -18,11 +18,58 @@
   <body>
     <%- include('partials/navbar.ejs') %>
 
-    <!-- Caminante, son tus huellas
-    el camino y nada más; -->
+    <div id="img-cabecera">
+      <div id="cont-poema">
+        <p class="poema">Caminante, son tus huellas <br> el camino y nada más</p>
+      </div>
+    </div>
 
-    <section style="height: 50vh;">
-      <h1>Portada</h1>
+
+    <section id="ppal-portada">
+
+      <div id="portada-contenido">
+        <h1>Descubre la Comunidad Valenciana como nunca antes</h1>
+
+        <!-- Pastilla lista  -->
+        <div class="portada-lista">
+          
+          <div class="img-info" id="img-lista-info"></div>
+
+          <div class="lista-info">
+            <h3 class="cont-titulo">Listado de rutas senderistas</h3>
+            <p>Accede a la lista de las rutas senderistas de distintos parques naturales de la Comunidad Valenciana. Aquí podrás encontrar toda la información que necesites: el nombre de la ruta, su localización, dificultad y duración aproximada entre otras muchas cosas. Desde aquí tendrás acceso a:</p>
+            <ul class="lista-ul">
+              <li class="lista-li">- Lista completa de todas las rutas.</li>
+              <li class="lista-li">- Filtrado por distintos parámetros.</li>
+              <li class="lista-li">- Información general de cada ruta senderista.</li>
+              <li class="lista-li">- Acceso al portal de cada una de las rutas, donde podrás acceder a toda la información sobre ella.</li>
+            </ul>
+            <a href="/lista" class="boton-lista">Ir a la lista</a>
+          </div>
+
+        </div>
+
+        <!-- Pastilla mapa  -->
+        <div class="portada-lista">
+
+          <div class="img-info" id="img-mapa-info"></div>
+
+          <div class="lista-info">
+            <h3 class="cont-titulo">Rutas senderistas sobre el mapa de la CV</h3>
+            <p>Mapa general de la Comunidad Valenciana donde aparecen la localización de los distintos parques naturales de la comunidad. Aquí podrás encontrar toda la información que necesites: el nombre de la ruta, su localización, dificultad y duración aproximada entre otras muchas cosas. Desde aquí podrás:</p>
+            <ul class="lista-ul">
+              <li class="lista-li">- Seleccionar el parque natural que desees.</li>
+              <li class="lista-li">- Acceso a la información general de cada ruta senderista.</li>
+              <li class="lista-li">- Acceso al portal de cada una de las rutas, donde podrás acceder a toda la información sobre ella.</li>
+            </ul>
+            <a href="/mapa-cv" class="boton-lista">Ir al mapa</a>
+          </div>
+
+        </div>
+
+      </div>
+      
+
     </section>
     
 

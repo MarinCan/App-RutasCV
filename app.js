@@ -11,7 +11,7 @@ const indexRouter = require('./routes/index');
 const loginRouter = require('./routes/login');
 const registerRouter = require('./routes/register');
 const userRouter = require('./routes/user');
-const mapaRouter = require('./routes/mapa_gv');
+const mapaRouter = require('./routes/mapa_cv');
 const listaRouter = require('./routes/lista');
 const rutaRouter = require('./routes/ruta');
 
@@ -31,7 +31,7 @@ app.use('/', indexRouter);
 app.use('/login', loginRouter);
 app.use('/register', registerRouter);
 app.use('/user', userRouter);
-app.use('/mapa-gv', mapaRouter);
+app.use('/mapa-cv', mapaRouter);
 app.use('/lista', listaRouter);
 app.use('/ruta', rutaRouter);
 

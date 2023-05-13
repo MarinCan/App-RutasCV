@@ -3,3 +3,136 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+#img-cabecera{
+  height: 30rem;
+  background: url('/images/fondo-cab.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: center;
+}
+
+#cont-poema{ /* cambiar margin en responsive? */
+  margin-left: 5rem;
+  /* background-color: rgba(255, 255, 255, 0.24); */
+}
+
+.poema{
+  color: white;
+  text-align: center;
+  font-size: 24px;
+}
+
+#ppal-portada{
+  display: flex;
+  justify-content: center;
+}
+
+#portada-contenido{
+  /* border: 1px solid red; */
+  width: 60%;
+  margin: 3rem;
+}
+
+.portada-lista{
+  /* border: 1px solid blue; */
+  margin: 3rem 0;
+  padding: 2rem;
+  display: flex;
+  justify-content: space-around;
+  border: 1px solid #07070777;
+  box-shadow: 2px 2px 2px #07070777;
+  border-radius: 15px;
+}
+
+.img-info{
+  width: 30%;
+}
+
+#img-lista-info{
+  background: url('/images/list-icon.png');
+  background-repeat: no-repeat;
+  background-position: center;
+  opacity: .9;
+}
+
+#img-mapa-info{
+  background: url('/images/mapa-icon.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  opacity: .9;
+}
+
+.lista-info{
+  width: 60%;
+  /* border: 1px solid yellow; */
+  text-align: justify;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.cont-titulo{
+  margin: 1rem 0;
+  font-size: 20px;
+}
+
+.lista-ul{
+  margin: 1rem;
+  line-height: 1.4;
+}
+
+.boton-lista{
+  width: 10rem;
+  padding: 1.2rem 1rem;
+  background-color: #ddbba3;
+  color: black;
+  text-align: center;
+  border: 1ps solid #070707;
+  border-radius: 15px;
+  box-shadow: 2px 2px 2px gray;
+  cursor: pointer;
+}
+.boton-lista:hover{
+  background-color: #070707;
+  color: white;
+  box-shadow: 3px 3px 3px gray;
+  transition: .2s;
+}
+
+@media only screen and (max-width: 768px){
+
+  #cont-poema{
+    margin-top: 10rem;
+  }
+
+  #portada-contenido{
+    width: 90%;
+    margin: 1rem;
+  }
+
+  .portada-lista{
+    padding: 1rem;
+    flex-direction: column;
+    align-items: center;
+  }
+  .img-info{
+    width: 80%;
+        
+  }
+  #img-lista-info{
+    height: 200px;
+    background-size: contain;
+  }
+  #img-mapa-info{
+    height: 200px;
+    background-size: contain;
+  }
+
+  .lista-info{
+    width: 90%;
+  }
+}
