@@ -14,24 +14,80 @@
 
     <%- include('partials/navbar.ejs') %>
 
-    <h1>Rutas</h1>
-
-    <div>
-
-      <% for (let i=0; i<rutas.length; i++){  %>
-
-        <div style="border: 1px solid; margin: 1rem; padding: 1rem;">
-
-          <h3> <%= rutas[i].nombre_ruta %> </h3>
-          <p> <%= rutas[i].parque_natural %> </p>
-
-          <a href="/ruta/<%= rutas[i].id %>">Ir a la ruta</a>
-
-        </div>
-
-      <% } %>
-
+    <div id="lista-titulo">
+      <h1>Listado de las rutas senderistas de la CV</h1>
     </div>
+
+    <section id="ppal-lista">      
+
+      <div id="columna-filtros">
+        <h3>Filtros</h3>
+
+          <form action="/lista" method="POST">
+
+            <input type="checkbox" name="Alicante" id="0">
+            <label for="Alicante">Alicante</label>
+
+            <input type="checkbox" name="Castellón" id="1">
+            <label for="Castellón">Castellón</label>
+
+            <input type="checkbox" name="Valencia" id="2">
+            <label for="Valencia">Valencia</label>
+
+            <br>
+
+            <input type="checkbox" name="Baja" id="0">
+            <label for="Baja">Baja</label>
+
+            <input type="checkbox" name="Media" id="2">
+            <label for="Media">Media</label>
+
+            <input type="checkbox" name="Alta" id="2">
+            <label for="Alta">Alta</label>
+
+            <br>
+
+            <input type="checkbox" name="distancia" id="0">
+            <label for="distancia">Distancia</label>
+
+            <div>
+              <button>Filtrar</button>
+            </div>
+
+          </form>
+
+      </div>
+
+      <div id="columna-lista">
+
+        <h3> <%= contador[0].total %> resultados:</h3>
+
+        <% for (let i=0; i<rutas.length; i++){  %>
+
+          <div style="border: 1px solid; margin: 1rem; padding: 1rem;">
+
+            <h3> <%= rutas[i].nombre_ruta %> </h3>
+            <p> <%= rutas[i].parque_natural %> </p>
+            <p> <%= rutas[i].provincia %> </p>
+            <p> <%= rutas[i].distancia %> </p>
+            
+            <% if( rutas[i].dificultad == 'Alta' ){ %>
+              <p style="background-color: rgb(253, 111, 111);"> <%= rutas[i].dificultad %> </p>
+            <% } else if( rutas[i].dificultad == 'Baja' ){ %>
+              <p style="background-color: lightgreen;"> <%= rutas[i].dificultad %> </p>
+            <% } else { %>
+              <p style="background-color: lightblue;"> <%= rutas[i].dificultad %> </p>
+            <% } %>
+
+            <a href="/ruta/<%= rutas[i].id %>">Ir a la ruta</a>
+
+          </div>
+
+        <% } %>
+
+      </div>
+
+    </section>
 
     <%- include('partials/footer.ejs') %>
 

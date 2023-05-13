@@ -1,0 +1,22 @@
+#lista-titulo{
+    width: 100%;
+    padding: 1.2rem 0;
+    text-align: center;
+}
+
+#ppal-lista{
+    border: 1px solid red;
+    display: flex;
+}
+
+#columna-filtros{
+    background-color: #d1cfcf;
+    border: 1px solid blue;
+    width: 30%;
+    padding: 2rem;
+}
+
+#columna-lista{
+    width: 70%;
+    padding: 0 3rem;
+}
