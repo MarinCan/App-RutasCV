@@ -1,3 +1,23 @@
-<h1><%= message %></h1>
-<h2><%= error.status %></h2>
-<pre><%= error.stack %></pre>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/error.css">
+    <title>Document</title>
+</head>
+<body>
+    <section id="fondo-error">
+        <section id="ppal-error">
+            <h1>Ooops!</h1>
+            <h1>Creo que nos hemos perdido...</h1>
+            <h2>Error <%= error.status %></h2>
+            <div id="img-error">
+                <img src="https://img.freepik.com/premium-vector/continuous-one-line-drawing-road-direction-sign-arrows-textured-wooden-sign-board-information-hand-drawn-vector-illustration_2242-844.jpg?w=2000" alt="">
+            </div>
+            <p>Pero no te preocupes, es fácil volver a <a href="/">casa</a>.</p>
+        </section>
+    </section>
+</body>
+</html>
