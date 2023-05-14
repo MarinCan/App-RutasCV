@@ -1,22 +1,195 @@
-#lista-titulo{
-    width: 100%;
-    padding: 1.2rem 0;
-    text-align: center;
-}
 
 #ppal-lista{
-    border: 1px solid red;
     display: flex;
+    min-height: 72vh;
 }
 
 #columna-filtros{
-    background-color: #d1cfcf;
-    border: 1px solid blue;
+    background-color: #dce4e4;
     width: 30%;
-    padding: 2rem;
+    padding: 2rem 3rem;
+    box-shadow: 2px 2px 3px rgb(158, 158, 158);
+}
+#titulo-filtros, .subtitulo-filtros{
+    padding: .5rem 0;
+}
+
+.tarjeta-filtro{
+    border: 1px solid rgb(148, 148, 148);
+    border-radius: 10px;
+    padding: .7rem 1.2rem;
+    margin-bottom: 1.5rem;
+    max-width: 50%;
+}
+
+.div-input{
+    margin: .5rem 0;
+}
+
+#botones{
+    width: 50%;
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.boton-filtro{
+    padding: .8rem 1rem;
+    background-color: #070707;
+    box-shadow: 2px 2px 2px gray;
+    color: white;
+    text-align: center;
+    border: none;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.boton-filtro:hover{
+  background-color: white;
+  color: black;
+  box-shadow: 2px 2px 3px gray;
+  transition: .2s;
 }
 
 #columna-lista{
     width: 70%;
-    padding: 0 3rem;
+    padding: 0 4rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#lista-titulo{
+    width: 100%;
+    padding: 1.2rem 0;
+    text-align: center;
+    font-size: 20px;
+}
+
+#listado-tarjetas{
+    min-height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta-ruta{
+    margin: 1rem 0;
+    border: 1px solid rgb(192, 192, 192);
+    box-shadow: 2px 2px 3px gray;
+    height: 200px;
+    width: 70%;
+    border-radius: 10px;
+    display: flex;
+}
+
+#img-ruta{
+    width: 200px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    background: url('/images/fondo-cab.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.ruta-dif{
+    width: 40%;
+    padding: .5rem;
+    text-align: center;
+    border-radius: 10px 0;
+}
+
+#info-ruta{
+    width: 70%;
+    /* border: 1px solid red; */
+    padding: 1.2rem 1.5rem;    
+}
+
+#nombre-ruta{
+    margin-bottom: .7rem;
+}
+
+.texto-ruta{
+    margin: .5rem 0;
+}
+
+.i-ruta{
+    color: rgb(119, 119, 119) ;
+    margin-right: .7rem;
+}
+
+#a-ruta{
+    color: rgb(119, 119, 119);
+    font-weight: bold;
+}
+
+#boton-ruta{
+    margin-top: .2rem;
+    padding: 1rem .8rem;
+}
+
+
+@media only screen and (max-width: 768px){
+
+    #ppal-lista{
+        flex-direction: column;
+    }
+
+    #columna-filtros{
+        width: 100%;
+        padding: 1rem 1rem;
+    }
+
+    .tarjeta-filtro{
+        max-width: 95%;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        margin-bottom: .5rem;
+        padding: .5rem 0;
+    }
+
+    #botones{
+        width: 95%;
+    }
+
+    #columna-lista{
+        width: 100%;
+        padding: 0 1rem;
+    }
+
+    .tarjeta-ruta{
+        height: 280px;
+        width: 95%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    #img-ruta{
+        width: 100%;
+        height: 40%;
+        border-radius: 10px 10px 0 0;
+        background: url('/images/fondo-cab.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    #info-ruta{
+        width: 100%;
+        height: 60%;
+        padding: 1.2rem 1.5rem;    
+        text-align: center;
+    }
+    .texto-ruta{
+        margin: .2rem 0;
+    }
+    #responsive-extra{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
 }

@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>Rutas</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista rutas CV</title>
     <link rel='stylesheet' href='/stylesheets/lista.css' />
         <!-- CSS files -->
         <link rel='stylesheet' href='/stylesheets/style.css' />
@@ -14,44 +17,58 @@
 
     <%- include('partials/navbar.ejs') %>
 
-    <div id="lista-titulo">
-      <h1>Listado de las rutas senderistas de la CV</h1>
-    </div>
-
     <section id="ppal-lista">      
 
       <div id="columna-filtros">
-        <h3>Filtros</h3>
+        <h3 id="titulo-filtros">Filtros</h3>
 
           <form action="/lista" method="POST">
 
-            <input type="checkbox" name="Alicante" id="0">
-            <label for="Alicante">Alicante</label>
+            <p class="subtitulo-filtros">Por provincia:</p>
+            <div class="tarjeta-filtro">
+              <div class="div-input">
+                <input type="checkbox" name="Alicante" >
+                <label for="Alicante">Alicante</label>
+              </div>
+              <div class="div-input">
+                <input type="checkbox" name="Castellón" >
+                <label for="Castellón">Castellón</label>
+              </div>
+              <div class="div-input">
+                <input type="checkbox" name="Valencia" >
+                <label for="Valencia">Valencia</label>
+              </div>
+            </div>
 
-            <input type="checkbox" name="Castellón" id="1">
-            <label for="Castellón">Castellón</label>
+            <p class="subtitulo-filtros">Por nivel de dificultad:</p>
+            <div class="tarjeta-filtro">
+              <div class="div-input">
+                <input type="checkbox" name="Baja" >
+                <label for="Baja">Baja</label>
+              </div>
+              <div class="div-input">
+                <input type="checkbox" name="Media" >
+                <label for="Media">Media</label>
+              </div>
+              <div class="div-input">
+                <input type="checkbox" name="Alta" >
+                <label for="Alta">Alta</label>
+              </div>
+            </div>
 
-            <input type="checkbox" name="Valencia" id="2">
-            <label for="Valencia">Valencia</label>
+            <p class="subtitulo-filtros">Ordenar por distancia:</p>
+            <div class="tarjeta-filtro">
+              <div class="div-input">
+                <input type="checkbox" name="distancia" >
+                <label for="distancia">Distancia</label>
+              </div>
+            </div>
 
-            <br>
-
-            <input type="checkbox" name="Baja" id="0">
-            <label for="Baja">Baja</label>
-
-            <input type="checkbox" name="Media" id="2">
-            <label for="Media">Media</label>
-
-            <input type="checkbox" name="Alta" id="2">
-            <label for="Alta">Alta</label>
-
-            <br>
-
-            <input type="checkbox" name="distancia" id="0">
-            <label for="distancia">Distancia</label>
-
-            <div>
-              <button>Filtrar</button>
+            <div id="botones">
+              <button class="boton-filtro">Filtrar</button>
+              <% if ( contador[0].total != 21) {  %> 
+                <button class="boton-filtro" onclick="location.href='/lista'">Borrar filtro</button>
+              <% } %>
             </div>
 
           </form>
@@ -60,31 +77,52 @@
 
       <div id="columna-lista">
 
-        <h3> <%= contador[0].total %> resultados:</h3>
-
-        <% for (let i=0; i<rutas.length; i++){  %>
-
-          <div style="border: 1px solid; margin: 1rem; padding: 1rem;">
-
-            <h3> <%= rutas[i].nombre_ruta %> </h3>
-            <p> <%= rutas[i].parque_natural %> </p>
-            <p> <%= rutas[i].provincia %> </p>
-            <p> <%= rutas[i].distancia %> </p>
-            
-            <% if( rutas[i].dificultad == 'Alta' ){ %>
-              <p style="background-color: rgb(253, 111, 111);"> <%= rutas[i].dificultad %> </p>
-            <% } else if( rutas[i].dificultad == 'Baja' ){ %>
-              <p style="background-color: lightgreen;"> <%= rutas[i].dificultad %> </p>
-            <% } else { %>
-              <p style="background-color: lightblue;"> <%= rutas[i].dificultad %> </p>
-            <% } %>
-
-            <a href="/ruta/<%= rutas[i].id %>">Ir a la ruta</a>
-
-          </div>
-
+        <div id="lista-titulo">
+          <h1>Listado de las rutas senderistas de la CV</h1>
+        </div>
+        
+        <div id="lista-resultados">
+        <% if ( contador[0].total == 1) {  %> 
+          <h3>Se ha encontrado <%= contador[0].total %> resultado:</h3>
+        <% } else { %>
+          <h3>Se han encontrado <%= contador[0].total %> resultados:</h3>
         <% } %>
+        </div>
 
+        <div id="listado-tarjetas">
+
+          <% for (let i=0; i<rutas.length; i++){  %>
+
+            <div class="tarjeta-ruta">
+
+              <div id="img-ruta">
+                <% if( rutas[i].dificultad == 'Alta' ){ %>
+                  <p class="ruta-dif" style="background-color: rgb(253, 111, 111);"> <%= rutas[i].dificultad %> </p>
+                <% } else if( rutas[i].dificultad == 'Baja' ){ %>
+                  <p class="ruta-dif" style="background-color: lightgreen;"> <%= rutas[i].dificultad %> </p>
+                <% } else { %>
+                  <p class="ruta-dif" style="background-color: lightblue;"> <%= rutas[i].dificultad %> </p>
+                <% } %>
+              </div>
+
+              <div id="info-ruta">
+
+                <h3 id="nombre-ruta"> <%= rutas[i].nombre_ruta %> </h3>
+                <p class="texto-ruta"><%= rutas[i].parque_natural %> </p>
+                <div id="responsive-extra">
+                <p class="texto-ruta"><i class="fa-sharp fa-solid fa-location-dot i-ruta"></i> <%= rutas[i].provincia %> </p>
+                <p class="texto-ruta"><i class="fa-solid fa-person-hiking i-ruta"></i> <%= rutas[i].distancia %> km</p>
+                </div>
+                <br>
+                <a id="a-ruta" href="/ruta/<%= rutas[i].id %>">Ver más</a>
+
+              </div>
+
+            </div>
+
+          <% } %>
+
+        </div>
       </div>
 
     </section>

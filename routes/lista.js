@@ -24,7 +24,7 @@ router.post('/', async (req, res) => {
 
     var filtro = Object.keys(obj)
 
-    if (filtro.includes("Valencia") || filtro.includes("Alicante") || filtro.includes("Castellón") && filtro.includes("Baja") || filtro.includes("Media") || filtro.includes("Alta") ){
+    if ((filtro.includes("Valencia") || filtro.includes("Alicante") || filtro.includes("Castellón")) && (filtro.includes("Baja") || filtro.includes("Media") || filtro.includes("Alta")) ){
 
         if ( filtro.includes("Valencia") || filtro.includes("Alicante") || filtro.includes("Castellón") ){        
             const provString = filtro.map(prov => `'${prov}'`).join(',')
