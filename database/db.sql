@@ -47,3 +47,12 @@ CREATE TABLE rutas_favs(
     CONSTRAINT fk_usuario_fav FOREIGN KEY(id_usuario) REFERENCES usuarios(id),
     CONSTRAINT fk_ruta_fav FOREIGN KEY(id_ruta) REFERENCES rutas(id)
 );
+
+-- TABLA IMG RUTAS
+CREATE TABLE img_rutas(
+    id INT UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+    id_img_ruta INT UNSIGNED,
+    url_imagen text NOT NULL,
+    atribucion text NOT NULL,
+    CONSTRAINT fk_img_ruta FOREIGN KEY(id_img_ruta) REFERENCES rutas(id)
+);

@@ -96,6 +96,9 @@
             <div class="tarjeta-ruta">
 
               <div id="img-ruta">
+
+                <img id="foto-ruta" src=" <%= imagen[i].url_imagen %> " alt="">
+
                 <% if( rutas[i].dificultad == 'Alta' ){ %>
                   <p class="ruta-dif" style="background-color: rgb(253, 111, 111);"> <%= rutas[i].dificultad %> </p>
                 <% } else if( rutas[i].dificultad == 'Baja' ){ %>

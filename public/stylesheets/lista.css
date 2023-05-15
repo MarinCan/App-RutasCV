@@ -88,13 +88,22 @@
     width: 200px;
     height: 100%;
     border-radius: 10px 0 0 10px;
-    background: url('/images/fondo-cab.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
+    position: relative;
+
+}
+
+#foto-ruta{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
 }
 
 .ruta-dif{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid white;
     width: 40%;
     padding: .5rem;
     text-align: center;
