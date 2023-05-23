@@ -1,0 +1,278 @@
+#mapa-ppal{
+    width: 100%;
+    height: 80vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#contenedor-mapa{
+    position: relative;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#mapa-cv{
+    height: 100%;
+}
+
+.punto{
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+    background-color: rgb(0, 153, 255);
+    color: transparent;
+    position: absolute;
+    border: none;
+    box-shadow: 2px 2px 2px gray;
+}
+
+.punto:hover{
+    background-color: rgb(0, 0, 255);
+    transform: scale(1.2);
+    transition: .2s;
+}
+
+#mapa-info{
+    width: 60%;
+    height: 100%;
+    padding: 3rem;
+}
+
+#info-parques{
+    height: 80%;
+    margin-top: 2rem;
+}
+
+#nombre_parque{
+    height: 2rem;
+}
+
+
+#listado-tarjetas{
+    min-height: 80%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.tarjeta-ruta{
+    margin: 1rem 0;
+    border: 1px solid rgb(192, 192, 192);
+    box-shadow: 2px 2px 3px gray;
+    height: 200px;
+    width: 70%;
+    border-radius: 10px;
+    display: flex;
+}
+
+#img-ruta{
+    width: 200px;
+    height: 100%;
+    border-radius: 10px 0 0 10px;
+    position: relative;
+
+}
+
+#foto-ruta{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px 0 0 10px;
+}
+
+.ruta-dif{
+    position: absolute;
+    top: 0;
+    left: 0;
+    border: 1px solid white;
+    width: 40%;
+    padding: .5rem;
+    text-align: center;
+    border-radius: 10px 0;
+}
+
+#info-ruta{
+    width: 70%;
+    /* border: 1px solid red; */
+    padding: 1.2rem 1.5rem;    
+}
+
+#nombre-ruta{
+    margin-bottom: .7rem;
+}
+
+.texto-ruta{
+    margin: .5rem 0;
+}
+
+.i-ruta{
+    color: rgb(119, 119, 119) ;
+    margin-right: .7rem;
+}
+
+#a-ruta{
+    color: rgb(119, 119, 119);
+    font-weight: bold;
+}
+
+#boton-ruta{
+    margin-top: .2rem;
+    padding: 1rem .8rem;
+}
+
+#pto1{    
+    left: 70%;
+    top: 6%;
+}
+#pto2{    
+    left: 77%;
+    top: 14%;
+}
+#pto3{    
+    left: 56%;
+    top: 16%;
+}
+/* #pto4{    
+    left: 72%;
+    top: 18%;
+} */
+#pto5{    
+    left: 86%;
+    top: 27%;
+}
+#pto6{    
+    left: 64%;
+    top: 24%;
+}
+#pto7{    
+    left: 20%;
+    top: 25%;
+}
+#pto8{    
+    left: 47%;
+    top: 27%;
+}
+#pto9{    
+    left: 48%;
+    top: 33%;
+}
+#pto10{    
+    left: 34%;
+    top: 40%;
+}
+#pto11{    
+    left: 46%;
+    top: 44%;
+}
+#pto12{    
+    left: 15%;
+    top: 45%;
+}
+#pto13{    
+    left: 54%;
+    top: 49%;
+}
+#pto14{    
+    left: 64%;
+    top: 63%;
+}
+#pto15{    
+    left: 74%;
+    top: 65%;
+}
+#pto16{    
+    left: 50%;
+    top: 68%;
+}
+#pto17{    
+    left: 72%;
+    top: 70%;
+}
+#pto18{    
+    left: 53%;
+    top: 74%;
+}
+#pto19{    
+    left: 63%;
+    top: 73%;
+}
+#pto20{    
+    left: 48%;
+    top: 83%;
+}
+#pto21{    
+    left: 39%;
+    top: 85%;
+}
+#pto22{    
+    left: 44%;
+    top: 90%;
+}
+
+
+@media only screen and (max-width: 768px){
+
+    #mapa-ppal{
+        height: fit-content;
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    #contenedor-mapa{
+        height: 75vh;
+    }
+
+    #mapa-info{
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+    }
+
+    #info-parques{
+        margin-top: 1rem;
+    }
+    
+    #nombre_parque{
+        height: 3rem;
+    }
+
+    .tarjeta-ruta{
+        height: 300px;
+        width: 100%;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+    }
+    #img-ruta{
+        width: 100%;
+        height: 50%;
+        border-radius: 10px 10px 0 0;
+        background: url('/images/fondo-cab.png');
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: center;
+    }
+    #info-ruta{
+        border: 1px solid;
+        width: 100%;
+        height: 50%;
+        padding: .5rem;    
+        text-align: center;
+    }
+    .texto-ruta{
+        margin: .2rem 0;
+    }
+    #responsive-extra{
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+    }
+
+
+}

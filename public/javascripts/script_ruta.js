@@ -13,15 +13,28 @@ const nom_arch = document.getElementById("nombre_archivo").innerHTML.trimStart()
 const map = L.map('map');
 
 // CARTOGR. VECTORIAL:
-// L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
-//   attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
-// }).addTo(map);
+var carto = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+  attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
+})
 
 
 // ORTOFOTO: 
-L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
+var orto = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
 	attribution: 'Tiles &copy; Esri &mdash; Source: Esri, i-cubed, USDA, USGS, AEX, GeoEye, Getmapping, Aerogrid, IGN, IGP, UPR-EGP, and the GIS User Community'
-}).addTo(map);
+})
+
+orto.addTo(map)
+
+
+function cambio_mapa(){
+  if (map.hasLayer(orto)) {
+      map.addLayer(carto);
+      map.removeLayer(orto);
+  } else {
+      map.addLayer(orto);
+      map.removeLayer(carto);
+  }
+}
 
 const gpx = '/rutas_gpx/' + nom_arch; // URL to your GPX file or the GPX itself
 new L.GPX(gpx, {

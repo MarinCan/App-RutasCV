@@ -4,8 +4,9 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Mapa CV</title>
     <!-- CSS files -->
+    <link rel='stylesheet' href='/stylesheets/mapa.css' />
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <link rel="stylesheet" href='/stylesheets/footer.css'>
     <link rel="stylesheet" href='/stylesheets/navbar.css'>
@@ -15,11 +16,104 @@
 <body>
     <%- include('partials/navbar.ejs') %>
 
-    <section style="height: 70vh;">
-      <h1>MAPA GV</h1>
+    <section id="mapa-ppal">
+      
+      <section id="contenedor-mapa">
+
+        <img id="mapa-cv" src="/images/mapa-cv-parques.png" alt="">
+
+        <form action="/mapa-cv" method="POST">
+          <input type="submit" class="punto" id="pto1" value="1" name="Tenencia de Benifasar">
+          <input type="submit" class="punto" id="pto2" value="2" name="Sierra de Irta">
+          <input type="submit" class="punto" id="pto3" value="3" name="Peñagolosa">
+          <!-- <input type="submit" class="punto" id="pto4" value="4" name="Cabanes"> -->
+          <input type="submit" class="punto" id="pto5" value="5" name="Islas Columbretes">
+          <input type="submit" class="punto" id="pto6" value="6" name="Desierto de las Palmas">
+          <input type="submit" class="punto" id="pto7" value="7" name="Puebla de San Miguel">
+          <input type="submit" class="punto" id="pto8" value="8" name="Sierra de Espadán">
+          <input type="submit" class="punto" id="pto9" value="9" name="Sierra Calderona">
+          <input type="submit" class="punto" id="pto10" value="10" name="Sot de Chera">
+          <input type="submit" class="punto" id="pto11" value="11" name="Túria">
+          <input type="submit" class="punto" id="pto12" value="12" name="Hoces del Cabriel">
+          <input type="submit" class="punto" id="pto13" value="13" name="Albufera">
+          <input type="submit" class="punto" id="pto14" value="14" name="Marjal de Pego-Oliva">
+          <input type="submit" class="punto" id="pto15" value="15" name="Macizo del Montgó">
+          <input type="submit" class="punto" id="pto16" value="16" name="Sierra de Mariola">
+          <input type="submit" class="punto" id="pto17" value="17" name="El peñón de Ifach">
+          <input type="submit" class="punto" id="pto18" value="18" name="Carrascal de la Fuente Roja">
+          <input type="submit" class="punto" id="pto19" value="19" name="Sierra Helada">
+          <input type="submit" class="punto" id="pto20" value="20" name="Salinas de Santa Pola">
+          <input type="submit" class="punto" id="pto21" value="21" name="El Hondo">
+          <input type="submit" class="punto" id="pto22" value="22" name="Lagunas de la Mata - Torrevieja">
+
+
+        </form>
+
+        
+      </section> 
+      
+      <section id="mapa-info">
+        <h1>Mapa Comunidad Valenciana</h1>
+        <p>Aquí encontrarás la ubicación de cada parque natural de la Comunidad Valenciana.<br>Cada punto representa un parque natural. Selecciona cualquiera para acceder a las distintas rutas que existen en ese lugar.</p>
+
+        <div id="info-parques">
+          
+          <h3 id="nombre_parque"></h3>
+
+          <% if (rutas.length > 0) { %>
+            
+
+            <div id="listado-tarjetas">
+
+              <% for (let i=0; i<rutas.length; i++){  %>
+    
+                <div class="tarjeta-ruta">
+    
+                  <div id="img-ruta">
+    
+                    <img id="foto-ruta" src=" <%= rutas[i].url_imagen %> " alt="">
+    
+                    <% if( rutas[i].dificultad == 'Alta' ){ %>
+                      <p class="ruta-dif" style="background-color: rgb(253, 111, 111);"> <%= rutas[i].dificultad %> </p>
+                    <% } else if( rutas[i].dificultad == 'Baja' ){ %>
+                      <p class="ruta-dif" style="background-color: lightgreen;"> <%= rutas[i].dificultad %> </p>
+                    <% } else { %>
+                      <p class="ruta-dif" style="background-color: lightblue;"> <%= rutas[i].dificultad %> </p>
+                    <% } %>
+                  </div>
+    
+                  <div id="info-ruta">
+    
+                    <h3 id="nombre-ruta"> <%= rutas[i].nombre_ruta %> </h3>
+                    <p class="texto-ruta"><%= rutas[i].parque_natural %> </p>
+                    <div id="responsive-extra">
+                    <p class="texto-ruta"><i class="fa-sharp fa-solid fa-location-dot i-ruta"></i> <%= rutas[i].provincia %> </p>
+                    <p class="texto-ruta"><i class="fa-solid fa-person-hiking i-ruta"></i> <%= rutas[i].distancia %> km</p>
+                    </div>
+                    <br>
+                    <a id="a-ruta" href="/ruta/<%= rutas[i].id %>">Ver más</a>
+    
+                  </div>
+    
+                </div>
+    
+              <% } %>
+    
+            </div>
+
+
+          <% } %>
+
+        </div>
+      </section>
+
     </section>
+
+    
     
 
     <%- include('partials/footer.ejs') %>
+
+    <script src="/javascripts/script_mapa.js"></script>
 </body>
 </html>

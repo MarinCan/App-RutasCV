@@ -17,8 +17,17 @@
     <p id="n_parque"> <%= info[0].parque_natural  %> </p>
     <p id="nombre_archivo" style="display: none"> <%= info[0].gpx_file  %> </p>
 
+    <button id="switch-map" onclick="cambio_mapa()">Cambio!</button>
+
 
     <div id='map' style="height: 75vh; width: 140vh; border: 1px solid;"></div>
+
+    <div>
+      <% for (let i=0; i<img_ruta.length; i++){ %>
+        <img src=" <%= img_ruta[i].url_imagen %> " alt="" style="height: 20vh;">
+      <% } %>
+
+    </div>
 
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
