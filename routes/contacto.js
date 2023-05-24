@@ -8,16 +8,14 @@ router.get('/', function(req, res, next) {
   res.render('contacto', {aviso});
 });
 
-// // POST para enviar email
+// POST para enviar email
 router.post("/", (req, res, next) => {
   const user_nombre = req.body.nombre
   const user_apellidos = req.body.apellidos
   const user_email = req.body.email
   const user_mensaje = req.body.mensaje
   // console.log(user_nombre)
-  // console.log(user_apellidos)
   // console.log(user_email)
-  // console.log(user_mensaje)
 
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
