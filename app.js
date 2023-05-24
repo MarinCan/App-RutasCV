@@ -1,9 +1,12 @@
+const dotenv = require('dotenv')
+dotenv.config()
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const logger = require('morgan');
 const passport = require('passport')
+const nodeMail = require("nodemailer");
 
 
 
@@ -14,6 +17,7 @@ const userRouter = require('./routes/user');
 const mapaRouter = require('./routes/mapa_cv');
 const listaRouter = require('./routes/lista');
 const rutaRouter = require('./routes/ruta');
+const contactoRouter = require('./routes/contacto');
 
 const app = express();
 
@@ -34,6 +38,7 @@ app.use('/user', userRouter);
 app.use('/mapa-cv', mapaRouter);
 app.use('/lista', listaRouter);
 app.use('/ruta', rutaRouter);
+app.use('/contacto', contactoRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
