@@ -67,13 +67,13 @@ nav{
     #ul-nav{
         position: fixed;
         width: 100%;
-        height: 50vh;
-        background: #333333;
+        height: 13rem;
+        background: #181818;
         /* background: red; */
         top: 80px;
         right: -120%;
         text-align: center;
-        transition: .5s;
+        transition: .2s;
     }
     
     .li_nav{
@@ -88,7 +88,8 @@ nav{
 
     #check:checked~ul{
         left: 0;
-        opacity: .8;
+        opacity: .85;
+        z-index: 10;
     }
 
 }

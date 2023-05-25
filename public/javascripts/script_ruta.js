@@ -4,7 +4,6 @@
 ///////////////////
 // https://github.com/mpetazzoni/leaflet-gpx
 
-// console.log('Hola desde el js!')
 
 const nom_arch = document.getElementById("nombre_archivo").innerHTML.trimStart()
 // console.log(nom_ruta.trimStart())
@@ -16,7 +15,6 @@ const map = L.map('map');
 var carto = L.tileLayer('http://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
   attribution: 'Map data &copy; <a href="http://www.osm.org">OpenStreetMap</a>'
 })
-
 
 // ORTOFOTO: 
 var orto = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}', {
@@ -36,7 +34,9 @@ function cambio_mapa(){
   }
 }
 
-const gpx = '/rutas_gpx/' + nom_arch; // URL to your GPX file or the GPX itself
+// URL al fichero GPX:
+const gpx = '/rutas_gpx/' + nom_arch;
+
 new L.GPX(gpx, {
   async: true,
   marker_options: {

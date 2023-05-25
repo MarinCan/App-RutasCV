@@ -1,0 +1,162 @@
+#ppal-ruta{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+}
+
+#titulos-ruta{
+    height: 6rem;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid red; */
+}
+
+#mapa-info{
+    margin-top: 1rem;
+    width: 80%;
+    /* border: 1px solid orange; */
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#map{
+    height: 70vh; 
+    width: 65%; 
+    border: 1px solid;
+    z-index: 1;
+}
+
+#info-ruta{
+    /* border: 1px solid blue; */
+    width: 35%;
+    height: 70vh; 
+    padding-left: 2rem;
+}
+
+#info-weather{
+    /* border: 1px solid lightcoral; */
+    margin-bottom: 2vh;
+    height: 15vh;
+    display: flex;
+    background-color: #f3f5f5;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(148, 148, 148);
+}
+
+#div-tiempo-actual{
+    width: 40%;
+    /* border: 1px solid; */
+    /* background-color: #eaf6f7;
+    border-radius: 5px; */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-self: center;
+    /* box-shadow: 2px 2px 2px rgb(148, 148, 148); */
+}
+
+#tiempo-actual2{
+    /* border: 1px solid;  */
+    width: 100%;
+    height: 70%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#icono_hoy2, #temp_hoy2{
+    font-size: 24px;
+    color: rgb(75, 74, 75);
+}
+
+#div-pronostico{
+    width: 60%;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    /* border: 1px solid; */
+}
+
+#boton_tiempo{
+    margin-top: .5rem;
+    background-color: #c9e5fa;
+    padding: .8rem;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 2px rgb(148, 148, 148);
+    cursor: pointer;
+}
+#boton_tiempo:hover{
+    transform: scale(1.02);
+    transition: .2s;
+}
+
+#tabla-ruta{
+    width: 100%;
+    height: 53vh;
+    border: 1px solid rgb(224, 224, 224);
+    border-collapse: collapse;
+    box-shadow: 2px 2px 2px rgb(148, 148, 148);
+}
+
+.row-ruta{
+    border: 1px solid rgb(224, 224, 224);
+}
+
+.data-ruta{
+    /* border: 1px solid rgb(85, 122, 134); */
+    padding: 1rem;
+}
+
+#fotos-botones{
+    height: 11rem;
+    width: 80%;
+    border: 1px solid orange;
+    margin-top: 2rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#fotos{
+    width: 65%; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* border: 1px solid magenta; */
+}
+
+#botones{
+    width: 35%;
+    /* border: 1px solid pink; */
+}
+
+
+.foto{
+    height: 10rem;
+    margin: 0 .5rem;
+}
+
+
+#comentarios-ruta{
+    width: 80%;
+    height: 20rem;
+    margin-top: 1rem;
+    border: 1px solid orange;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}

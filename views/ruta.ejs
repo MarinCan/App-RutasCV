@@ -2,8 +2,14 @@
 <html>
   <head>
     <title>Rutas</title>
+    <link rel='stylesheet' href='/stylesheets/ruta.css' />
+    <link rel='stylesheet' href='/stylesheets/popup.css' />
+    <!-- CSS files -->
     <link rel='stylesheet' href='/stylesheets/style.css' />
-
+    <link rel="stylesheet" href='/stylesheets/footer.css'>
+    <link rel="stylesheet" href='/stylesheets/navbar.css'>
+    <!-- Font awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
@@ -11,28 +17,173 @@
 
   </head>
   <body>
+    <%- include('partials/navbar.ejs') %>
 
-    <!-- <h1>RUTA</h1> -->
-    <h3 id="n_ruta"> <%= info[0].nombre_ruta  %> </h3>
-    <p id="n_parque"> <%= info[0].parque_natural  %> </p>
-    <p id="nombre_archivo" style="display: none"> <%= info[0].gpx_file  %> </p>
+    <section id="ppal-ruta">
 
-    <button id="switch-map" onclick="cambio_mapa()">Cambio!</button>
-
-
-    <div id='map' style="height: 75vh; width: 140vh; border: 1px solid;"></div>
-
-    <div>
-      <% for (let i=0; i<img_ruta.length; i++){ %>
-        <img src=" <%= img_ruta[i].url_imagen %> " alt="" style="height: 20vh;">
-      <% } %>
-
-    </div>
+      <div id="titulos-ruta">
+        <h1 id="n_ruta"> <%= info[0].nombre_ruta  %> </h1>
+        <p id="n_parque"> <%= info[0].parque_natural  %> </p>
+        <p id="nombre_archivo" style="display: none"> <%= info[0].gpx_file  %> </p>
+        <p id="latitud" style="display: none"> <%= info[0].latitud  %> </p>
+        <p id="longitud" style="display: none"> <%= info[0].longitud  %> </p>
+      </div>
 
 
+      <div id="mapa-info">
+
+        <div id='map'></div>
+
+        <div id="info-ruta">
+
+          <div id="info-weather">
+
+            <div id="div-tiempo-actual">
+              <p>Tiempo actual:</p>
+              <div id="tiempo-actual2">
+                <i id="icono_hoy2" class="fa-solid "></i>
+                <p id="temp_hoy2"></p>
+              </div>
+            </div>
+
+            <div id="div-pronostico">
+              <p>Consulta la previsión de los próximos días:</p>
+              <button id="boton_tiempo" onclick="abrirPopup('popup_tiempo')">Previsión Meteorológica</button>
+            </div>            
+
+            <!-- CONTENIDO POP-UP TIEMPO -->
+            <div id="popup_tiempo">
+              <div id="ventana-tiempo">
+                <div id="div-cerrar">
+                  <button id="close-btn" onclick="cerrarPopup('popup_tiempo')"><i class="fa-solid fa-xmark"></i></i></button>
+                </div>
+                
+                <div id="div-tiempo-hoy">              
+                  <h3 id="municipio"></h3>
+                  <div id="tiempo-hoy-2">
+                    <i id="icono_hoy" class="fa-solid "></i>
+                    <p id="temp_hoy"></p>
+                  </div>
+                  <p id="tiempo_hoy"></p>
+                </div>
+
+                <table id="tabla-tiempo">
+                  <tr class="row-tiempo">
+                    <td class="data-tiempo" id="dia1_fecha"></td>
+                    <td class="data-tiempo" id="dia1_temp"></td>
+                    <td class="data-tiempo"><i id="dia1_tiempo" class="icono_tabla fa-solid "></i></td>
+                  </tr>
+                  <tr class="row-tiempo">
+                    <td class="data-tiempo" id="dia2_fecha"></td>
+                    <td class="data-tiempo" id="dia2_temp"></td>
+                    <td class="data-tiempo"><i id="dia2_tiempo" class="icono_tabla fa-solid "></i></td>
+                  </tr>
+                  <tr class="row-tiempo">
+                    <td class="data-tiempo" id="dia3_fecha"></td>
+                    <td class="data-tiempo" id="dia3_temp"></td>
+                    <td class="data-tiempo"><i id="dia3_tiempo" class="icono_tabla fa-solid "></i></td>
+                  </tr>
+                  <tr class="row-tiempo">
+                    <td class="data-tiempo" id="dia4_fecha"></td>
+                    <td class="data-tiempo" id="dia4_temp"></td>
+                    <td class="data-tiempo"><i id="dia4_tiempo" class="icono_tabla fa-solid "></i></td>
+                  </tr>
+                </table>
+
+                <div id="div-alertas">
+                  <p id="titulo-alertas">Alertas:</p>
+                  <p id="sin-alertas">No hay alertas</p>
+                  <p id="alarma-temp"></p>
+                  <p id="tiempo_malo"></p>
+                </div>
+              </div>
+            </div>
+            <!-- FIN POP-UP tiempo -->
+
+          </div>
+
+          <table id="tabla-ruta">
+            <tr class="row-ruta">
+              <td class="data-ruta">Parque natural:</td>
+              <td class="data-ruta"><%= info[0].parque_natural %></td>
+            </tr>
+            <tr class="row-ruta">
+              <td class="data-ruta">Municipio:</td>
+              <td class="data-ruta"><%= info[0].municipio %></td>
+            </tr>
+            <tr class="row-ruta">
+              <td class="data-ruta">Provincia:</td>
+              <td class="data-ruta"><%= info[0].provincia %></td>
+            </tr>          
+            <tr class="row-ruta">
+              <td class="data-ruta">Distancia:</td>
+              <td class="data-ruta"><%= info[0].distancia %> km </td>
+            </tr>
+            <tr class="row-ruta">
+              <td class="data-ruta">Nivel de dificultad:</td>
+              <td class="data-ruta"><%= info[0].dificultad%> </td>
+            </tr>          
+            <tr class="row-ruta">
+              <td class="data-ruta">Duración (aprox.):</td>
+              <td class="data-ruta"><%= info[0].duracion %> </td>
+            </tr>          
+          </table>
+
+          <!-- <div id="botones-ruta">
+            <button>Descarga</button>
+            <div id="votos">
+
+            </div>
+          </div> -->
+
+        </div>
+
+      </div>
+
+
+      <div id="fotos-botones">
+        <div id="fotos">
+          <% for (let i=0; i<img_ruta.length; i++){ %>
+            <img src=" <%= img_ruta[i].url_imagen %> " alt="" class="foto">
+          <% } %>    
+        </div>
+
+        <div id="botones">
+          <button></button>
+        </div>
+      </div>
+
+
+
+      <div id="comentarios-ruta">
+        <p>comentario</p>
+      </div>
+
+      
+
+
+    </section>
+    
+    
+
+    <!-- <button id="switch-map" onclick="cambio_mapa()">Cambio!</button> -->
+
+
+    
+
+    
+
+
+
+
+    <%- include('partials/footer.ejs') %>
+
+    <!-- JS de librerias leaflet + plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
+    <!-- JS ruta -->
     <script src="/javascripts/script_ruta.js"></script>
+    <script src="/javascripts/script_popup.js"></script>
 
   </body>
 </html>
