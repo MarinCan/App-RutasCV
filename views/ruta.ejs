@@ -162,7 +162,9 @@
         <div id="botones-votos">
           <div id="botones">
             <button class="botones-ruta" onclick="cambio_mapa()">Cambio cartografía</button>
-            <button class="botones-ruta"><i id="i-descarga" class="fa-solid fa-download"></i>Descarga</button>
+            <a href="/rutas_gpx/<%= info[0].gpx_file %>">
+              <button class="botones-ruta"><i id="i-descarga" class="fa-solid fa-download"></i>Descarga</button>
+            </a>
           </div>
           <div id="div-votos">
             <p>¿Te gusta esta ruta?</p>
@@ -201,13 +203,18 @@
         <div id="lista-comentarios">
           <% if (comentarios.length == 0) { %>
             <p>No existe ningún comentario todavía.</p>
-          <% } else { %> 
+          <% } else { %>             
+            <h3>Comentarios:</h3>
             <% for (let j=0; j<comentarios.length; j++){ %>
 
-              <div class="comentario_usuario">
+              <div class="comentario-usuario">
                 <div class="cab-comentario">
                   <h3> <%= comentarios[j].nombre_completo %> </h3>
-                  <p> <%= comentarios[j].publicado %> </p>
+                  <% var fecha = new Date(comentarios[j].publicado); %>
+                  <% var dia = fecha.getDate() %>
+                  <% var mes = fecha.getMonth() + 1 %>
+                  <% var anyo = fecha.getFullYear() %>
+                  <p><%= dia %>-<%= mes %>-<%= anyo %> </p>
                 </div>
                 <p> <%= comentarios[j].comentario %> </p>
               </div>

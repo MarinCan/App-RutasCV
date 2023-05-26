@@ -52,5 +52,4 @@ router.get('/dislike/:id', async function(req, res, next) {
   res.redirect('/ruta/'+id_ruta);
 });
 
-
 module.exports = router;

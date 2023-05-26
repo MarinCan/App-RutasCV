@@ -214,9 +214,9 @@
 
 #comentarios-ruta{
     width: 80%;
-    height: 100vh;
-    margin-top: 2rem;
-    border: 1px solid lightgray;
+    min-height: 100vh;
+    margin: 2rem 0;
+    /* border: 1px solid lightgray; */
     display: flex;
     flex-direction: column;
 }
@@ -287,3 +287,25 @@ textarea{
     color: white;
     cursor: pointer;
 }
+
+#lista-comentarios{
+    width: 100%;
+    margin-top: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.comentario-usuario{
+    width: 75%;
+    border-style: none none solid none;
+    border-width: 1px;
+    border-color: lightgray;
+    padding: 1rem;
+}
+
+.cab-comentario{
+    margin-bottom: .5rem;
+}
+
