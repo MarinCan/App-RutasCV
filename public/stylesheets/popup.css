@@ -1,145 +1,137 @@
+#popup_tiempo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(40, 40, 46, 0.95);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10;
+}
+  
+#ventana-tiempo {
+  height: 600px;
+  width: 350px;
+  background: url('https://upload.wikimedia.org/wikipedia/commons/c/ce/Sky_-_Beautiful_Blue.jpg');
+  /* background: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/Atmosphere_Sky_Clouds.jpg'); */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-radius: 5px;
+  box-shadow: 3px 3px 4px rgb(20, 20, 20);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  z-index: 10;
+}
 
-  #popup_tiempo {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(38, 38, 63, 0.9);
-      display: none;
-      justify-content: center;
-      align-items: center;
-      z-index: 10;
-  }
+#div-cerrar{
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-bottom: 1rem;
+}
+
+#close-btn {
+  color: black;
+  border: none;
+  background: none;
+  cursor: pointer;
+  margin-right: .5rem;
+  font-size: 16px;
+}
+
+#close-btn:hover {
+  opacity: .5;
+}
   
-  #ventana-tiempo {
-      height: 600px;
-      width: 350px;
-      /* background-color: white; */
-      background: url('https://upload.wikimedia.org/wikipedia/commons/c/ce/Sky_-_Beautiful_Blue.jpg');
-      /* background: url('https://upload.wikimedia.org/wikipedia/commons/a/a1/Atmosphere_Sky_Clouds.jpg'); */
-      background-position: center;
-      background-repeat: no-repeat;
-      background-size: cover;
-      border-radius: 5px;
-      box-shadow: 3px 3px 4px rgb(20, 20, 20);
-      text-align: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      z-index: 10;
-  }
+#icono_hoy{
+  font-size: 36px;
+  color: white;
+  opacity: .85;
+}
+
+#temp_hoy{
+  font-size: 28px;
+  color: white;
+}
   
-  #div-cerrar{
-    width: 100%;
-    height: 30px;
-    display: flex;
-    align-items: center;
-    justify-content: end;
-    margin-bottom: 1rem;
-  }
+.icono_tabla{
+  color: rgb(82, 82, 82);
+}
+
+#div-tiempo-hoy{
+  width: 90%;
+  height: 30%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-bottom: 2rem;
+  background-color: rgba(255, 255, 255, 0.288);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+#tiempo-hoy-2{
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+
+#tabla-tiempo{
+  width: 90%;
+  border: 2px solid rgba(255, 255, 255, 0.377);
+  padding: .5rem;
+  border-spacing: .3rem;
+  border-radius: 5px;
+}
+
+.row-tiempo, .data-tiempo {
+  background-color: rgba(255, 255, 255, 0.288);
+  padding: .3rem;
+  border-radius: 5px;
+}
+
   
-  #close-btn {
-    color: black;
-    border: none;
-    background: none;
-    cursor: pointer;
-    margin-right: .5rem;
-    font-size: 16px;
+#div-alertas{
+  width: 90%;
+  height: 8rem;
+  margin-top: 2rem;
+  background-color: rgba(255, 255, 255, 0.288);
+  padding: 1rem;
+  border-radius: 5px;
+}
+
+#titulo-alertas{
+  padding-bottom: 1rem;
+  font-weight: bold;
+}
+
+#warning{
+  padding-left: .3rem;
+  color: rgb(235, 111, 80);
+  animation: blink-animation 1s steps(5, start) infinite;
+  -webkit-animation: blink-animation 1.2s steps(5, start) infinite;
+}
+
+@keyframes blink-animation {
+  to {
+    visibility: hidden;
   }
-  
-  #close-btn:hover {
-      opacity: .5;
+}
+@-webkit-keyframes blink-animation {
+  to {
+    visibility: hidden;
   }
-  
-  #icono_hoy{
-      font-size: 36px;
-      color: white;
-      opacity: .85;
-      /* color: rgb(82, 82, 82); */
-  }
-  
-  #temp_hoy{
-    font-size: 28px;
-    color: white;
-  }
-  
-  .icono_tabla{
-    color: rgb(82, 82, 82);
-  }
-  
-  #div-tiempo-hoy{
-    width: 90%;
-    height: 30%;
-    display: flex;
-    flex-direction: column;
-    /* align-items: center; */
-    justify-content: center;
-    /* border: 1px solid; */
-    margin-bottom: 2rem;
-    background-color: rgba(255, 255, 255, 0.288);
-    padding: 1rem;
-    border-radius: 5px;
-  }
-  
-  #tiempo-hoy-2{
-    /* border: 1px solid; */
-    margin: 1rem 0;
-    display: flex;
-    justify-content: space-evenly;
-    align-items: center;
-  }
-  
-  #tabla-tiempo{
-    width: 90%;
-    border: 2px solid rgba(255, 255, 255, 0.377);
-    padding: .5rem;
-    border-spacing: .3rem;
-    border-radius: 5px;
-  }
-  
-  .row-tiempo, .data-tiempo {
-    /* border: 1px solid white; */
-    background-color: rgba(255, 255, 255, 0.288);
-    padding: .3rem;
-    border-radius: 5px;
-  }
-  
-  
-  #div-alertas{
-    width: 90%;
-    height: 8rem;
-    margin-top: 2rem;
-    background-color: rgba(255, 255, 255, 0.288);
-    padding: 1rem;
-    border-radius: 5px;
-  }
-  
-  #titulo-alertas{
-    padding-bottom: 1rem;
-    font-weight: bold;
-  }
-  
-  #warning{
-      /* font-size: 20px; */
-      padding-left: .3rem;
-      color: rgb(235, 111, 80);
-      animation: blink-animation 1s steps(5, start) infinite;
-          -webkit-animation: blink-animation 1.2s steps(5, start) infinite;
-        }
-        @keyframes blink-animation {
-          to {
-            visibility: hidden;
-          }
-        }
-        @-webkit-keyframes blink-animation {
-          to {
-            visibility: hidden;
-          }
-  }
+}
     
 /* POP UP FOTOS */
-
 
 #popup_fotos {
   position: fixed;
@@ -147,7 +139,7 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(38, 38, 63, 0.9);
+  background-color: rgba(40, 40, 46, 0.95);
   display: none;
   flex-direction: column;
   justify-content: center;
@@ -170,7 +162,7 @@
 }
 
 #close-btn2:hover {
-    opacity: .5;
+  opacity: .5;
 }
 
 #foto{
@@ -181,4 +173,24 @@
 #atribucion-foto{
   margin-top: 2rem;
   color: white;
+  text-align: center;
+}
+
+
+@media only screen and (max-width: 768px){
+  
+  #div-cerrar2{
+    width: 90%;
+    margin-bottom: 1rem;
+  }
+
+  #foto{
+    width: 90%;
+    height: auto;
+  }
+
+  #atribucion-foto{
+    width: 90%;
+  }
+
 }

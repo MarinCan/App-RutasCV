@@ -132,13 +132,6 @@
             </tr>          
           </table>
 
-          <!-- <div id="botones-ruta">
-            <button>Descarga</button>
-            <div id="votos">
-
-            </div>
-          </div> -->
-
         </div>
 
       </div>
@@ -178,7 +171,6 @@
       </div>
 
 
-
       <div id="comentarios-ruta">
 
         <div id="form-completo">
@@ -187,7 +179,7 @@
           <form action="/ruta/<%= info[0].id %>" method="post" id="formulario-comentario">
             <div class="dato-comentario">
                 <label for="nombre_completo">Nombre completo:</label>
-                <input type="text" name="nombre_completo" placeholder="Nombre y apellidos" class="dato-input" style="width: 50%;" required>
+                <input id="input-nombre" type="text" name="nombre_completo" placeholder="Nombre y apellidos" class="dato-input" required>
             </div>
             <div class="dato-comentario">
                 <label for="comentario">Comentario:</label>
@@ -224,27 +216,11 @@
 
         </div>        
 
-
-
       </div>
-
-      
-
 
     </section>
     
     
-
-    <!-- <button id="switch-map" onclick="cambio_mapa()">Cambio!</button> -->
-
-
-    
-
-    
-
-
-
-
     <%- include('partials/footer.ejs') %>
 
     <!-- JS de librerias leaflet + plugin -->
