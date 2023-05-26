@@ -99,7 +99,7 @@
     cursor: pointer;
 }
 #boton_tiempo:hover{
-    transform: scale(1.02);
+    transform: scale(1.05);
     transition: .2s;
 }
 
@@ -120,10 +120,15 @@
     padding: 1rem;
 }
 
+.img-foto{
+    height: 10rem;
+    margin: 0 .5rem;
+    cursor: pointer;
+}
+
 #fotos-botones{
     height: 11rem;
     width: 80%;
-    border: 1px solid orange;
     margin-top: 2rem;
     display: flex;
     justify-content: center;
@@ -135,28 +140,150 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* border: 1px solid magenta; */
+}
+
+#botones-votos{
+    width: 35%;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;    
 }
 
 #botones{
-    width: 35%;
-    /* border: 1px solid pink; */
+    height: 4rem;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
 }
 
-
-.foto{
-    height: 10rem;
-    margin: 0 .5rem;
+.botones-ruta{
+    width: 10rem;
+    background-color: #c9e5fa;
+    padding: .8rem;
+    border-radius: 5px;
+    border: none;
+    box-shadow: 2px 2px 2px rgb(148, 148, 148);
+    cursor: pointer;
 }
 
+.botones-ruta:hover{
+    transform: scale(1.05);
+    transition: .2s;
+}
+
+#i-descarga{
+    margin-right: 15px;
+    font-size: 18px;
+    color: rgb(75, 74, 75);
+}
+
+#div-votos{
+    height: 7rem;
+    width: 100%;
+    padding-left: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#i-votoUp, #i-votoDown{
+    font-size: 26px;
+    /* color: rgb(75, 74, 75); */
+}
+
+#i-votoUp{
+    color: #618d33;
+}
+#i-votoDown{
+    color: rgb(163, 89, 36);
+}
+
+#votos{
+    height: 3rem;
+    margin-top: .3rem;
+    width: 10rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
 
 #comentarios-ruta{
     width: 80%;
-    height: 20rem;
-    margin-top: 1rem;
-    border: 1px solid orange;
+    height: 100vh;
+    margin-top: 2rem;
+    border: 1px solid lightgray;
+    display: flex;
+    flex-direction: column;
+}
+
+#form-completo{
+    width: 100%;
+    height: 24rem;
+    margin-top: 2rem;
     display: flex;
     flex-direction: column;
     align-items: center;
+}
+#formulario-comentario{
+    border: 1px solid;
+    margin-top: 1rem;
+    width: 75%;
+    padding: 1rem;
+    border-radius: 5px;
+    box-shadow: 2px 2px 2px rgb(148, 148, 148);
+}
+
+.linea-form{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+}
+
+.dato-comentario{
+    /* border: 1px solid blue; */
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: left;
+    padding: 0.5rem 0;
+}
+
+.dato-comentario2{
+    /* border: 1px solid blue; */
+    width: 100%;
+    display: flex;
     justify-content: center;
+    align-items: center;
+    padding: 0.5rem 0;
+}
+
+label{
+    margin-bottom: .2rem;
+}
+
+textarea{
+    resize: none;
+}
+
+.dato-input{
+    padding: .6rem .8rem;
+    width: 100%;
+    border: 1px solid gray;
+    border-radius: 5px;
+}
+
+#boton-comentar{
+    width: 7rem;
+    padding: .8rem 1rem;
+    border-radius: 10px;
+    border: none;
+    background-color: black;
+    color: white;
+    cursor: pointer;
 }

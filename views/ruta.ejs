@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Rutas</title>
     <link rel='stylesheet' href='/stylesheets/ruta.css' />
     <link rel='stylesheet' href='/stylesheets/popup.css' />
@@ -48,7 +51,7 @@
 
             <div id="div-pronostico">
               <p>Consulta la previsión de los próximos días:</p>
-              <button id="boton_tiempo" onclick="abrirPopup('popup_tiempo')">Previsión Meteorológica</button>
+              <button id="boton_tiempo" onclick="abrirPopup('popup_tiempo')">Previsión meteorológica</button>
             </div>            
 
             <!-- CONTENIDO POP-UP TIEMPO -->
@@ -144,19 +147,78 @@
       <div id="fotos-botones">
         <div id="fotos">
           <% for (let i=0; i<img_ruta.length; i++){ %>
-            <img src=" <%= img_ruta[i].url_imagen %> " alt="" class="foto">
+            <img src=" <%= img_ruta[i].url_imagen %> " alt="" class="img-foto" onclick="abrirPopup2('popup_fotos', '<%= img_ruta[i].url_imagen %>', '<%= img_ruta[i].atribucion %>' )" >
           <% } %>    
         </div>
 
-        <div id="botones">
-          <button></button>
+        <div id="popup_fotos">
+          <div id="div-cerrar2">
+            <button id="close-btn2" onclick="cerrarPopup('popup_fotos')"><i class="fa-solid fa-xmark"></i></button>
+          </div>
+          <img id="foto" src="" alt="">
+          <p id="atribucion-foto"></p>
+        </div>
+
+        <div id="botones-votos">
+          <div id="botones">
+            <button class="botones-ruta" onclick="cambio_mapa()">Cambio cartografía</button>
+            <button class="botones-ruta"><i id="i-descarga" class="fa-solid fa-download"></i>Descarga</button>
+          </div>
+          <div id="div-votos">
+            <p>¿Te gusta esta ruta?</p>
+            <div id="votos">
+              <a href="/ruta/like/<%= info[0].id %>"><i id="i-votoUp" class="fa-regular fa-thumbs-up"></i></a>
+              <p><%= info[0].votos %></p>
+              <a href="/ruta/dislike/<%= info[0].id %>"><i id="i-votoDown" class="fa-regular fa-thumbs-down"></i></a>
+            </div>
+          </div>
         </div>
       </div>
 
 
 
       <div id="comentarios-ruta">
-        <p>comentario</p>
+
+        <div id="form-completo">
+          <h3>Deja tu opinión sobre esta ruta:</h3>
+
+          <form action="/ruta/<%= info[0].id %>" method="post" id="formulario-comentario">
+            <div class="dato-comentario">
+                <label for="nombre_completo">Nombre completo:</label>
+                <input type="text" name="nombre_completo" placeholder="Nombre y apellidos" class="dato-input" style="width: 50%;" required>
+            </div>
+            <div class="dato-comentario">
+                <label for="comentario">Comentario:</label>
+                <textarea name="comentario" class="dato-input" placeholder="Escribe tu mensaje" cols="40" rows="5" required></textarea>
+            </div>
+            <div class="dato-comentario2">
+              <input type="submit" id="boton-comentar" value="Comentar" required>
+            </div>
+          </form>
+        </div>
+
+
+        <div id="lista-comentarios">
+          <% if (comentarios.length == 0) { %>
+            <p>No existe ningún comentario todavía.</p>
+          <% } else { %> 
+            <% for (let j=0; j<comentarios.length; j++){ %>
+
+              <div class="comentario_usuario">
+                <div class="cab-comentario">
+                  <h3> <%= comentarios[j].nombre_completo %> </h3>
+                  <p> <%= comentarios[j].publicado %> </p>
+                </div>
+                <p> <%= comentarios[j].comentario %> </p>
+              </div>
+
+            <% } %>
+          <% } %>   
+
+        </div>        
+
+
+
       </div>
 
       

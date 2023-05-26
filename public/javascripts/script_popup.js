@@ -100,8 +100,19 @@ fetch(api)
 
 // Funciones para cualquier pop-up (tiempo e imágenes):
 function abrirPopup(contenedor){
-    const popupContainer = document.getElementById(contenedor);
-    popupContainer.style.display = "flex";
+    const popup_contenedor = document.getElementById(contenedor);
+    popup_contenedor.style.display = "flex";
+}
+
+function abrirPopup2(contenedor, url, atrib){
+    const popup_contenedor = document.getElementById(contenedor);
+    popup_contenedor.style.display = "flex";
+    // console.log(url)
+    // console.log(atrib)
+
+    document.getElementById('foto').setAttribute("src", url)
+    document.getElementById('atribucion-foto').innerHTML = atrib
+
 }
 
 function cerrarPopup(contenedor){
