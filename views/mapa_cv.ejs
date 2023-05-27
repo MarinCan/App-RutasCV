@@ -1,17 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Mapa CV</title>
-    <!-- CSS files -->
-    <link rel='stylesheet' href='/stylesheets/mapa.css' />
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href='/stylesheets/footer.css'>
-    <link rel="stylesheet" href='/stylesheets/navbar.css'>
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+  <%- include('partials/head.ejs') %>
+
+  <title>Mapa CV</title>
+  <link rel='stylesheet' href='/stylesheets/mapa.css' />
+
 </head>
 <body>
     <%- include('partials/navbar.ejs') %>
@@ -53,7 +48,7 @@
       </section> 
       
       <section id="mapa-info">
-        <h1>Mapa Comunidad Valenciana</h1>
+        <h1 id="titulo-mapa">Mapa Comunidad Valenciana</h1>
         <p>Aquí encontrarás la ubicación de cada parque natural de la Comunidad Valenciana.<br>Cada punto representa un parque natural. Selecciona cualquiera para acceder a las distintas rutas que existen en ese lugar.</p>
 
         <div id="info-parques">
@@ -111,7 +106,6 @@
 
     
     
-
     <%- include('partials/footer.ejs') %>
 
     <script src="/javascripts/script_mapa.js"></script>

@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Rutas</title>
+
+    <%- include('partials/head.ejs') %>
+
+    <title>Ruta senderista</title>
     <link rel='stylesheet' href='/stylesheets/ruta.css' />
     <link rel='stylesheet' href='/stylesheets/popup.css' />
-    <!-- CSS files -->
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href='/stylesheets/footer.css'>
-    <link rel="stylesheet" href='/stylesheets/navbar.css'>
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- leaflet -->
     <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
     integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
@@ -206,7 +200,7 @@
                   <% var dia = fecha.getDate() %>
                   <% var mes = fecha.getMonth() + 1 %>
                   <% var anyo = fecha.getFullYear() %>
-                  <p><%= dia %>-<%= mes %>-<%= anyo %> </p>
+                  <p class="fecha-comentario"><%= dia %>-<%= mes %>-<%= anyo %> </p>
                 </div>
                 <p> <%= comentarios[j].comentario %> </p>
               </div>
@@ -220,7 +214,7 @@
 
     </section>
     
-    
+    <%- include('partials/img-footer.ejs') %>
     <%- include('partials/footer.ejs') %>
 
     <!-- JS de librerias leaflet + plugin -->

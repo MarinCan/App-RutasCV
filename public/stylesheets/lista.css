@@ -33,20 +33,18 @@
 }
 
 .boton-filtro{
-    padding: .8rem 1rem;
+    padding:.8rem;
     background-color: #070707;
     box-shadow: 2px 2px 2px gray;
     color: white;
     text-align: center;
     border: none;
-    border-radius: 20px;
+    border-radius: 15px;
     cursor: pointer;
 }
 .boton-filtro:hover{
-  background-color: white;
-  color: black;
-  box-shadow: 2px 2px 3px gray;
-  transition: .2s;
+    transform: scale(1.05);
+    transition: .2s;
 }
 
 #columna-lista{
@@ -60,9 +58,13 @@
 
 #lista-titulo{
     width: 100%;
-    padding: 1.2rem 0;
-    text-align: center;
+    padding: 1.2rem 0;    
     font-size: 20px;
+}
+
+#lista-h1{
+    font-size: 28px;
+    text-align: center;
 }
 
 #listado-tarjetas{
@@ -170,7 +172,7 @@
     }
 
     .tarjeta-ruta{
-        height: 300px;
+        height: 320px;
         width: 95%;
         border-radius: 10px;
         display: flex;

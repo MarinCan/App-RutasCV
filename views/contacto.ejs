@@ -18,7 +18,7 @@
     <%- include('partials/navbar.ejs') %>
     <section id="fondo-contacto">
         <section id="ppal-contacto">
-            <h1>Contacto</h1>
+            <h1 id="titulo-contacto">Contacto</h1>
         
             <p>Si tienes alguna duda, no dudes en ponerte en contacto con nosotros.</p>
             <!-- <p>Te responderemos con la mayor brevedad posible.</p> -->
@@ -47,7 +47,7 @@
                     <% if (aviso.length == 0) { %>
                         <input type="submit" id="boton" value="Enviar" required>
                     <% } else { %>
-                        <p> <%= aviso %> <br>Te responderemos lo antes posible.</p>
+                        <p id="texto-aviso"> <%= aviso %> <br>Te responderemos lo antes posible.</p>
                     <% } %>
                 </div>
             </form>
