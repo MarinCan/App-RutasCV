@@ -29,6 +29,7 @@
 
       <div id="mapa-info">
 
+        <!-- Mapa de la ruta Leaftlet: -->
         <div id='map'></div>
 
         <div id="info-ruta">
@@ -99,6 +100,7 @@
 
           </div>
 
+          <!-- Información de la ruta -->
           <table id="tabla-ruta">
             <tr class="row-ruta">
               <td class="data-ruta">Parque natural:</td>
@@ -130,7 +132,7 @@
 
       </div>
 
-
+      <!-- Fotos + botones + votos -->
       <div id="fotos-botones">
         <div id="fotos">
           <% for (let i=0; i<img_ruta.length; i++){ %>
@@ -164,7 +166,7 @@
         </div>
       </div>
 
-
+      <!-- Comentarios -->
       <div id="comentarios-ruta">
 
         <div id="form-completo">
@@ -220,7 +222,7 @@
     <!-- JS de librerias leaflet + plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-gpx/1.7.0/gpx.min.js"></script>
-    <!-- JS ruta -->
+    <!-- JS ruta + pop up -->
     <script src="/javascripts/script_ruta.js"></script>
     <script src="/javascripts/script_popup.js"></script>
 

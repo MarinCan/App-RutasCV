@@ -3,17 +3,11 @@ dotenv.config()
 const createError = require('http-errors');
 const express = require('express');
 const path = require('path');
-const cookieParser = require('cookie-parser');
+// const cookieParser = require('cookie-parser');
 const logger = require('morgan');
-const passport = require('passport')
-const nodeMail = require("nodemailer");
-
 
 
 const indexRouter = require('./routes/index');
-const loginRouter = require('./routes/login');
-const registerRouter = require('./routes/register');
-const userRouter = require('./routes/user');
 const mapaRouter = require('./routes/mapa_cv');
 const listaRouter = require('./routes/lista');
 const rutaRouter = require('./routes/ruta');
@@ -28,13 +22,10 @@ app.set('view engine', 'ejs');
 app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
-app.use(cookieParser());
+// app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
-app.use('/login', loginRouter);
-app.use('/register', registerRouter);
-app.use('/user', userRouter);
 app.use('/mapa-cv', mapaRouter);
 app.use('/lista', listaRouter);
 app.use('/ruta', rutaRouter);

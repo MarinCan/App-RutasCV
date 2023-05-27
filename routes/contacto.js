@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 const nodemailer = require("nodemailer");
 
-/* GET users listing. */
+/* GET contacto */
 router.get('/', function(req, res, next) {
   var aviso = ""
   res.render('contacto', {aviso});
 });
+
 
 // POST para enviar email
 router.post("/", (req, res, next) => {
@@ -14,8 +15,6 @@ router.post("/", (req, res, next) => {
   const user_apellidos = req.body.apellidos
   const user_email = req.body.email
   const user_mensaje = req.body.mensaje
-  // console.log(user_nombre)
-  // console.log(user_email)
 
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
@@ -46,7 +45,6 @@ router.post("/", (req, res, next) => {
   });
 
   var aviso = "Se ha enviado tu mensaje."
-  // console.log(aviso)
   res.render('contacto', {aviso});
 })
 

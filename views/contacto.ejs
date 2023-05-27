@@ -1,18 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <%- include('partials/head.ejs') %>
+
     <title>Contacto</title>
-    <link rel="shortcut icon" href="/images/favicon.png" type="image/x-icon">
-    <!-- CSS files -->
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-    <link rel="stylesheet" href='/stylesheets/footer.css'>
-    <link rel="stylesheet" href='/stylesheets/navbar.css'>
     <link rel="stylesheet" href="/stylesheets/contacto.css">
-    <!-- Font awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 <body>
     <%- include('partials/navbar.ejs') %>
@@ -21,7 +15,6 @@
             <h1 id="titulo-contacto">Contacto</h1>
         
             <p>Si tienes alguna duda, no dudes en ponerte en contacto con nosotros.</p>
-            <!-- <p>Te responderemos con la mayor brevedad posible.</p> -->
 
             <form action="/contacto" method="post" id="formulario-contacto">
                 <div class="linea-form">

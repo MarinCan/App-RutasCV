@@ -41,10 +41,8 @@
           <input type="submit" class="punto" id="pto21" value="21" name="El Hondo">
           <input type="submit" class="punto" id="pto22" value="22" name="Lagunas de la Mata - Torrevieja">
 
+        </form>      
 
-        </form>
-
-        
       </section> 
       
       <section id="mapa-info">
@@ -55,8 +53,7 @@
           
           <h3 id="nombre_parque"></h3>
 
-          <% if (rutas.length > 0) { %>
-            
+          <% if (rutas.length > 0) { %>            
 
             <div id="listado-tarjetas">
 
@@ -75,6 +72,7 @@
                     <% } else { %>
                       <p class="ruta-dif" style="background-color: lightblue;"> <%= rutas[i].dificultad %> </p>
                     <% } %>
+                    
                   </div>
     
                   <div id="info-ruta">
@@ -88,23 +86,14 @@
                     <br>
                     <a id="a-ruta" href="/ruta/<%= rutas[i].id %>">Ver más</a>
     
-                  </div>
-    
-                </div>
-    
-              <% } %>
-    
+                  </div>    
+                </div>    
+              <% } %>    
             </div>
-
-
           <% } %>
-
         </div>
       </section>
-
-    </section>
-
-    
+    </section>    
     
     <%- include('partials/footer.ejs') %>
 

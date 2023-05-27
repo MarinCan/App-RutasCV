@@ -1,13 +1,7 @@
-
-///////////////////
-//  LEAFLET GPX  //
-///////////////////
+//  LEAFLET GPX
 // https://github.com/mpetazzoni/leaflet-gpx
 
-
 const nom_arch = document.getElementById("nombre_archivo").innerHTML.trimStart()
-// console.log(nom_ruta.trimStart())
-// console.log('/rutas_gpx/'+nom_arch)
 
 const map = L.map('map');
 
@@ -22,7 +16,6 @@ var orto = L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/Wor
 })
 
 orto.addTo(map)
-
 
 function cambio_mapa(){
   if (map.hasLayer(orto)) {

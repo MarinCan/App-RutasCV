@@ -98,21 +98,19 @@ fetch(api)
 
 
 
-// Funciones para cualquier pop-up (tiempo e imágenes):
+// Funciones para pop-up tiempo:
 function abrirPopup(contenedor){
     const popup_contenedor = document.getElementById(contenedor);
     popup_contenedor.style.display = "flex";
 }
 
+// Funciones para pop-up fotos:
 function abrirPopup2(contenedor, url, atrib){
     const popup_contenedor = document.getElementById(contenedor);
     popup_contenedor.style.display = "flex";
-    // console.log(url)
-    // console.log(atrib)
 
     document.getElementById('foto').setAttribute("src", url)
     document.getElementById('atribucion-foto').innerHTML = atrib
-
 }
 
 function cerrarPopup(contenedor){
@@ -123,9 +121,9 @@ function cerrarPopup(contenedor){
 // Función para transformar la fecha de la api en formato 'dia semana - número día':
 function diaSemana_tiempo(fecha) {
     const diasSemana = ['Dom', 'Lun', 'Mar', 'Mié', 'Jue', 'Vie', 'Sáb'];
-    const partesFecha = fecha.split(' ')[0].split('-'); // Se obtiene la parte de la fecha sin la hora
+    const partesFecha = fecha.split(' ')[0].split('-');
     const anyo = parseInt(partesFecha[0]);
-    const mes = parseInt(partesFecha[1]) - 1; // Los meses en JavaScript están indexados desde 0
+    const mes = parseInt(partesFecha[1]) - 1;
     const dia = parseInt(partesFecha[2]);
     
     const fechaCompleta = new Date(anyo, mes, dia);

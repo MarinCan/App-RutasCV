@@ -3,7 +3,7 @@ const router = express.Router();
 const pool = require('../database')
 
 
-/* GET users listing. */
+/* GET lista rutas */
 router.get('/', async function(req, res, next) {
 
     const [rutas] = await pool.query('SELECT * FROM rutas')
@@ -14,8 +14,8 @@ router.get('/', async function(req, res, next) {
     res.render('lista', { rutas, contador, imagen });
 });
 
+/* POST para el filtrado de la lista rutas */
 router.post('/', async (req, res) => {
-    // console.log(req.body)
 
     var consulta_filtro = "SELECT * FROM rutas"
     var subconsulta_filtro_img = "SELECT id FROM rutas"
@@ -59,16 +59,10 @@ router.post('/', async (req, res) => {
 
     var contador_consulta = consulta_filtro.replace('*', 'COUNT(*) AS total')
 
-    // console.log(subconsulta_filtro_img)
-
-    // var consulta_filtro_img = 'SELECT * from img_rutas JOIN rutas ON img_rutas.id_ruta = rutas.id WHERE rutas.id IN ( ' + subconsulta_filtro_img + ' ) GROUP BY img_rutas.id_ruta'
-
-    // console.log(consulta_filtro_img)
-
     const [rutas] = await pool.query(consulta_filtro)
     const [contador] = await pool.query(contador_consulta)
     const [imagen] = await pool.query(consulta_filtro_img)
-    // console.log(rutas)
+
     res.render('lista', { rutas, contador, imagen });
 })
 

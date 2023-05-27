@@ -11,7 +11,6 @@ router.get('/:id', async function(req, res, next) {
   const [img_ruta] = await pool.query('SELECT * from img_rutas WHERE id_ruta = ?', id_ruta)
   const [comentarios] = await pool.query('SELECT * FROM comentarios WHERE id_ruta = ?', id_ruta)
 
-  // console.log(info[0])
   res.render('ruta', { info, img_ruta, comentarios });
 });
 
