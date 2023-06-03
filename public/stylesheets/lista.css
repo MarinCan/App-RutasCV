@@ -131,7 +131,7 @@
 }
 
 #a-ruta{
-    color: rgb(119, 119, 119);
+    color: rgb(165, 165, 165);
     font-weight: bold;
 }
 
@@ -208,3 +208,19 @@
     }
 
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    #columna-filtros{
+        padding: 2rem 1rem;
+    }
+    .tarjeta-filtro{
+        max-width: 80%;
+    }
+    #columna-lista{
+        padding: 0 2rem;
+    }
+    .tarjeta-ruta{
+        height: 220px;
+        width: 90%;
+    }
+  }

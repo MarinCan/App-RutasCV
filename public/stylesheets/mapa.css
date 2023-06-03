@@ -121,7 +121,7 @@
 }
 
 #a-ruta{
-    color: rgb(119, 119, 119);
+    color: rgb(165, 165, 165);
     font-weight: bold;
 }
 
@@ -265,6 +265,9 @@
         background-size: cover;
         background-position: center;
     }
+    #foto-ruta{
+        border-radius: 10px 10px 0 0;
+    }
     #info-ruta{
         width: 100%;
         height: 50%;
@@ -280,6 +283,29 @@
         align-items: center;
         justify-content: space-around;
     }
-
-
 }
+
+@media only screen and (min-width: 769px) and (max-width: 1024px) {
+    #mapa-ppal{        
+        height: fit-content;
+        flex-direction: column;
+        justify-content: center;
+    }
+    #contenedor-mapa{
+        height: 75vh;
+    }
+    #mapa-cv{
+        width: 99%;
+    }
+    #mapa-info{
+        width: 100%;
+        height: 100%;
+        padding: 1rem;
+    }
+    #info-parques{
+        margin-top: 1rem;
+    }
+    #nombre_parque{
+        height: 3rem;
+    }
+  }

@@ -9,8 +9,8 @@ router.get('/', async function(req, res, next) {
     const [rutas] = await pool.query('SELECT * FROM rutas')
     const [contador] = await pool.query('SELECT COUNT(*) AS total FROM rutas')
     const [imagen] = await pool.query('SELECT url_imagen from img_rutas JOIN rutas ON img_rutas.id_ruta = rutas.id GROUP BY img_rutas.id_ruta')
-    console.log(rutas[0])
-    console.log(imagen[0])
+    // console.log(rutas[0])
+    // console.log(imagen[0])
     res.render('lista', { rutas, contador, imagen });
 });
 
@@ -21,9 +21,9 @@ router.post('/', async (req, res) => {
     var subconsulta_filtro_img = "SELECT id FROM rutas"
 
     var obj = JSON.parse(JSON.stringify(req.body))
-    console.log(obj)
-    console.log(Object.keys(obj).length)
-    console.log(Object.keys(obj))
+    // console.log(obj)
+    // console.log(Object.keys(obj).length)
+    // console.log(Object.keys(obj))
 
     var filtro = Object.keys(obj)
 
